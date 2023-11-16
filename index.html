@@ -1,219 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="CSS/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/tablet.css"
+      media="screen and (max-width: 991px)"
+    />
+    <link
+      rel="stylesheet"
+      href="css/mobile.css"
+      media="screen and (max-width: 540px)"
+    />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Boolzapp</title>
   </head>
-  <section id="laptop-screen">
-  <header></header>
   <body>
-    <section id="laptop-screen">
-      <div class="container">
-        <div class="left-col color-red">
-          <header class="color-grey">
-            <nav>
-             <div>
-              <img src="img/avatar_io.jpg" alt="">
-            </div>
-            <div>
-              <ul>
-                <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-message"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-bars"></i></a></li>
-              </ul>
-            </div>
-            
-            </nav>
-          </header>
-          <body class="color-grey">
-            <div class="Notify color-azul">
-              <div>
-                <i class="fa-solid fa-bell-slash colorback-azul"></i>
-              </div>
-              <div>
-               
-                <h4>Ricevi notifiche di nuovi messaggi</h4>
-                <span>Attiva notifiche desktop</span>
-              
-              </div>
-            </div>
-            <div class="search-bar">
-              <div><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></div>
-              <div><input type="text"></div>
-            </div>
-            <div class="list-users color-white">
-
-              <div class="chat">
-                <div>
-              <img src="img/avatar_1.jpg" alt="">
-              </div>
-              <div>
-              <h3>Michele </h3>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <span>16:13</span>
-            
-            </div>
-
-            <div class="chat">
-              <div>
-            <img src="img/avatar_2.jpg" alt="">
-            </div>
-            <div>
-            <h3>Fabio</h3>
-            <p>Lorem ipsum dolor sit amet</p>
+    <div id="app" class="container">
+      <!-- contenitore sx -->
+      <div class="left">
+        <div class="header-left">
+          <div class="header-left-logo">
+            <img src="img/avatar_io.jpg" alt="Mio avatar" />
           </div>
-          <span>16:13</span>
+          <div class="header-left-icons">
+            <i class="fas fa-circle-notch">{{name}}</i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
           </div>
-
-          <div class="chat">
-            <div>
-          <img src="img/avatar_3.jpg" alt="">
+        </div>
+        <div class="left-disclaimer">
+          <div class="left-disclaimer-logo">
+            <i class="fa fa-bell-slash" aria-hidden="true"></i>
           </div>
-          <div>
-          <h3>Samuele</h3>
-          <p>Lorem ipsum dolor sit amet</p>
+          <div class="left-disclaimer-text">
+            <h3>Ricevi notifiche di nuovi messaggi</h3>
+            <a href="#">Attiva notifiche desktop</a>
+          </div>
         </div>
-        <span>15:05</span>
+        <div class="left-searchbar">
+          <label class="search-label" for="search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </label>
+          <input
+            id="contacts-filter"
+            class="left-searchbar-input"
+            placeholder="Cerca o inizia una nuova chat"
+            name="search"
+          />
         </div>
-
-        <div class="chat">
-          <div>
-        <img src="img/avatar_4.jpg" alt="">
+        <div class="contacts">
+          <div class="contact">
+            <div class="contact-logo">
+              <img src="img/avatar_1.jpg" alt="Avatar Michele" />
+            </div>
+            <div class="contact-info">
+              <h3>
+                <span class="contact-name">Michele</span>
+                <span class="time">16:15</span>
+              </h3>
+              <small>Lorem ipsum dolor sit amet</small>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="contact-logo">
+              <img src="img/avatar_2.jpg" alt="Avatar Fabio" />
+            </div>
+            <div class="contact-info">
+              <h3>
+                <span class="contact-name">Fabio</span>
+                <span class="time">16:05</span>
+              </h3>
+              <small>Lorem ipsum dolor sit amet</small>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="contact-logo">
+              <img src="img/avatar_3.jpg" alt="Avatar Samuele" />
+            </div>
+            <div class="contact-info">
+              <h3>
+                <span class="contact-name">Samuele</span>
+                <span class="time">16:03</span>
+              </h3>
+              <small>Lorem ipsum dolor sit amet</small>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="contact-logo">
+              <img src="img/avatar_4.jpg" alt="Avatar Alessandro B." />
+            </div>
+            <div class="contact-info">
+              <h3>
+                <span class="contact-name">Alessandro B.</span>
+                <span class="time">15:50</span>
+              </h3>
+              <small>Lorem ipsum dolor sit amet</small>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="contact-logo">
+              <img src="img/avatar_5.jpg" alt="Avatar Alessandro L." />
+            </div>
+            <div class="contact-info">
+              <h3>
+                <span class="contact-name">Alessandro L.</span>
+                <span class="time">15:45</span>
+              </h3>
+              <small>Lorem ipsum dolor sit amet</small>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="contact-logo">
+              <img src="img/avatar_6.jpg" alt="Avatar Claudia" />
+            </div>
+            <div class="contact-info">
+              <h3>
+                <span class="contact-name">Claudia</span>
+                <span class="time">15:40</span>
+              </h3>
+              <small>Lorem ipsum dolor sit amet</small>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="contact-logo">
+              <img src="img/avatar_7.jpg" alt="Avatar Federico" />
+            </div>
+            <div class="contact-info">
+              <h3>
+                <span class="contact-name">Federico</span>
+                <span class="time">15:22</span>
+              </h3>
+              <small>Lorem ipsum dolor sit amet</small>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="contact-logo">
+              <img src="img/avatar_8.jpg" alt="Avatar Davide" />
+            </div>
+            <div class="contact-info">
+              <h3>
+                <span class="contact-name">Davide</span>
+                <span class="time">15:15</span>
+              </h3>
+              <small>Lorem ipsum dolor sit amet</small>
+            </div>
+          </div>
         </div>
-        <div>
-        <h3>Alessandro B.</h3>
-        <p>Lorem ipsum dolor sit amet</p>
       </div>
-      <span>11:30</span>
-      </div>
-
-      <div class="chat">
-        <div>
-      <img src="img/avatar_5.jpg" alt="">
-      </div>
-      <div>
-      <h3>Alessandro L.</h3>
-      <p>Lorem ipsum dolor sit amet</p>
-    </div>
-    <span>10:30</span>
-    </div>
-
-    <div class="chat">
-      <div>
-    <img src="img/avatar_6.jpg" alt="">
-    </div>
-    <div>
-    <h3>Claudia</h3>
-    <p>Lorem ipsum dolor sit amet</p>
-  </div>
-  <span>10:01</span>
-  </div>
-
-
-  <div class="chat">
-    <div>
-  <img src="img/avatar_7.jpg" alt="">
-  </div>
-  <div>
-  <h3>Federico</h3>
-  <p>Lorem ipsum dolor sit amet</p>
-</div>
-<span>9:30</span>
-</div>
-<div class="chat hidden-chat">
-
-  <div>
-<img src="img/avatar_8.jpg" alt="" >
-</div>
-
-</div>
-
-</div>
-            </div>
-          </body>
-        <div class="right-col color-blue">
-          <header class="color-grey">
-            <nav>
-              <div>
-                <div>
-              <img src="img/avatar_1.jpg" alt="">
-              </div>
-              <div>
-              <h3>Michele</h3>
-              <p>Ultimo accesso oggi alle 16:26</p>
-            </div>
-            </div>
-           
-            <div>
-              <ul>
-                <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-paperclip"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-bars"></i></a></li>
-              </ul>
-            </div>
-            </nav>
-          </header>
-          <body>
-            <div class="container-chat">
-            <div class="color-green receive">
-
-              <div id="option-message2">
-                <i class="fa-solid fa-caret-down"> </i>
-                <div>
-    <p>Info messaggio</p>
-    <a href="">Cancella messaggio</a>
-    </div>
-             
-              </div>
-       
-                <div><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.  </p>
-                <span>16:13</span></div>
-                
-            </div>
-
-
-
-
-
-
-            <div class="color-white sent">
-              <div id="option-message">
-                <i class="fa-solid fa-caret-down"> </i>
-                <div>
-    <p>Info messaggio</p>
-    <a href="">Cancella messaggio</a>
-    </div>
-             
-              </div>
-                <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p> 
-                  <span>16:13</span> 
-                
-                </div> 
+      <!-- /contenitore sx -->
+      <!-- contenitore dx -->
+      <div class="right">
+        <div class="header-right">
+          <div class="header-right-logo">
+            <img src="img/avatar_1.jpg" alt="" />
+            <h3>
+              <span id="header-right-contact-name">Michele</span> <br />
+              <small class="time">Ultimo accesso oggi alle 16:26</small>
+            </h3>
+          </div>
+          <div class="header-right-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div class="right-messages-container">
+          <div class="right-messages">
+            <div
+              v-for="(message,index) in contacts[messageIndex].messages"
+              class="message"
+              :class="message.status==='sent' ? 'sent' : 'received'"
+            >
+              <div class="message-inner">
+                <span class="message-text">{{message.message}} </span>
+                <div class="message-options">
+                  <i class="fa fa-chevron-down"></i>
+                  <div class="message-options-panel">
+                    <div class="message-info">Info messaggio</div>
+                    <div class="message-destroy">Cancella messaggio</div>
+                  </div>
                 </div>
-
-                
-                
-            
-          <div class="forscroll-bar"></div>
+              </div>
+              <span class="message-time">16:13</span>
             </div>
-            <div class="type-message color-green">
-
-
-<div><a href=""><i class="fa-regular fa-face-smile"></i></a></div>
-<div><input type="text" placeholder="Scrivi un messaggio" style="padding: 5px;"></div>
-<div><a href=""><i class="fa-solid fa-microphone"></i></a></div>
-
-
-            </div>
-          </body>
-        
+          </div>
+        </div>
+        <div class="right-footer">
+          <div class="right-footer-icon">
+            <i class="far fa-smile"></i>
+          </div>
+          <input class="new-message-inputs" placeholder="Scrivi un messaggio" />
+          <div class="right-footer-icon">
+            <i class="fa fa-microphone" aria-hidden="true"></i>
+          </div>
         </div>
       </div>
-    </section>
+      <!-- /contenitore dx -->
+    </div>
+    <script type="module" src="JS/script.js"></script>
   </body>
- 
 </html>
