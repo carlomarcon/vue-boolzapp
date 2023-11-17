@@ -175,6 +175,7 @@ const app = createApp({
   methods: {
     Send: function () {
       this.contacts[this.messageIndex].messages.push({ ...this.newChat });
+      this.newChat.message = "";
       setTimeout(() => {
         this.contacts[this.messageIndex].messages.push({
           ...{
