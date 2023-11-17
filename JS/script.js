@@ -3,6 +3,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      check: true,
       messageIndex: 0,
       searchText: "",
       newChat: { date: "10/01/2020 15:30:55", message: "", status: "sent" },
@@ -195,6 +196,9 @@ const app = createApp({
 
     changeChat: function (chatNumber) {
       this.messageIndex = chatNumber;
+      this.contacts.forEach((element, index) => {
+        element.visible = true;
+      });
     },
 
     textSearch: function () {
