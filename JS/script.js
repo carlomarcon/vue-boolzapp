@@ -173,6 +173,16 @@ const app = createApp({
   methods: {
     Send: function () {
       this.contacts[this.messageIndex].messages.push({ ...this.newChat });
+      setTimeout(() => {
+        this.contacts[this.messageIndex].messages.push({
+          ...{
+            date: "10/01/2020 15:30:55",
+            message:
+              "Il messaggio non è stato possibile inviarlo, siamo spiacenti. Riprovi più tardi",
+            status: "received",
+          },
+        });
+      }, 1000);
     },
     changeChat: function (chatNumber) {
       this.messageIndex = chatNumber;
