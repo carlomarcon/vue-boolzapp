@@ -4,7 +4,7 @@ const app = createApp({
   data() {
     return {
       messageIndex: 0,
-      newChat: { message: "" },
+      newChat: { date: "10/01/2020 15:30:55", message: "", status: "sent" },
       contacts: [
         {
           name: "Michele",
@@ -171,6 +171,8 @@ const app = createApp({
     };
   },
   methods: {
-    Send: function () {},
+    Send: function () {
+      this.contacts[this.messageIndex].messages.push({ ...this.newChat });
+    },
   },
 }).mount("#app");

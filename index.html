@@ -204,6 +204,7 @@
             class="new-message-inputs"
             placeholder="Scrivi un messaggio"
             v-model="newChat.message"
+            @keyup.enter="Send()"
           />
           <div class="right-footer-icon">
             <i class="fa fa-microphone" aria-hidden="true"></i>
