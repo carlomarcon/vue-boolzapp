@@ -11,13 +11,14 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-image:
-    linear-gradient(to bottom,
-      #009688 0px,
-      #009688 15vh,
-      #dddbd1 15vh,
-      #d2dbdc 100%);
-  font-family: 'Lato', sans-serif;
+  background-image: linear-gradient(
+    to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%
+  );
+  font-family: "Lato", sans-serif;
 }
 
 .z-index-100 {
@@ -37,7 +38,7 @@ body {
 
 .left {
   width: 380px;
-  border-right: 1px solid #D6D6D6;
+  border-right: 1px solid #d6d6d6;
 }
 
 .right {
@@ -51,7 +52,7 @@ body {
   justify-content: space-between;
   width: 100%;
   height: 70px;
-  background: #EAEAEA;
+  background: #eaeaea;
 }
 
 .header-left .header-left-logo,
@@ -91,7 +92,7 @@ body {
 }
 
 .header-right .header-right-logo h3 small {
-  color: #6B7376;
+  color: #6b7376;
 }
 
 /* LEFT COLUMN */
@@ -103,17 +104,17 @@ body {
   align-items: center;
   width: 100%;
   height: 80px;
-  background: #8EDAFC;
+  background: #8edafc;
 }
 
 .left-disclaimer .left-disclaimer-logo {
   width: 50px;
   height: 50px;
   margin: auto 15px;
-  background: #F2FBFF;
+  background: #f2fbff;
   border-radius: 100%;
   text-align: center;
-  color: #8EDAFC;
+  color: #8edafc;
   line-height: 50px;
   font-size: 20px;
 }
@@ -124,7 +125,7 @@ body {
 }
 
 .left-disclaimer .left-disclaimer-text a {
-  color: #4F7485;
+  color: #4f7485;
   font-size: 13.5px;
 }
 
@@ -133,7 +134,7 @@ body {
   display: flex;
   width: 100%;
   height: 50px;
-  background: #FAFAFA;
+  background: #fafafa;
 }
 
 .left-searchbar .search-label {
@@ -142,12 +143,12 @@ body {
   flex-shrink: 0;
   height: 36px;
   margin: 7px 0 7px 7px;
-  border: 1px solid #F5F5F5;
+  border: 1px solid #f5f5f5;
   border-right: 0;
   background: #fff;
   line-height: 36px;
   text-align: center;
-  color: #B6B9BB;
+  color: #b6b9bb;
 }
 
 .left-searchbar .left-searchbar-input {
@@ -157,10 +158,10 @@ body {
   height: 36px;
   margin: 7px 7px 7px 0;
   padding: 0 10px;
-  border: 1px solid #F5F5F5;
+  border: 1px solid #f5f5f5;
   border-left: 0;
   border-radius: 0px 3px 3px 0;
-  color: #B6B9BB;
+  color: #b6b9bb;
 }
 
 /* CONTACTS */
@@ -178,11 +179,11 @@ body {
   cursor: pointer;
   width: 100%;
   height: 80px;
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .left .contacts .contact:hover {
-  background: #f4f5f5;
+  background-color: #e9ebeb;
 }
 
 .left .contacts .contact:last-child {
@@ -191,7 +192,7 @@ body {
 
 .left .contacts .contact.active {
   border-bottom-color: transparent;
-  background: #E9EBEB;
+  background: #e9ebeb;
 }
 
 .left .contacts .contact .contact-logo {
@@ -223,15 +224,14 @@ body {
 }
 
 .left .contacts .contact .contact-info span.time {
-  color: #B6B9BB;
+  color: #b6b9bb;
   font-size: 12px;
   font-weight: lighter;
 }
 
 .left .contacts .contact .contact-info small {
-  color: #B6B9BB;
+  color: #b6b9bb;
   margin-top: 10px;
-
 }
 
 /* RIGHT COLUMN */
@@ -250,7 +250,7 @@ body {
   height: 100%;
   width: 100%;
   padding: 5% 10%;
-  background-image: url('../img/mine.jpg');
+  background-image: url("../img/mine.jpg");
   overflow-y: scroll;
 }
 
@@ -272,7 +272,7 @@ body {
 
 .right .right-messages .message.sent {
   align-self: flex-end;
-  background: #D5F9BA;
+  background: #d5f9ba;
 }
 
 .right .right-messages .message .message-inner {
@@ -287,7 +287,7 @@ body {
 }
 
 .right .right-messages .message .message-options .fa-chevron-down {
-  color: #B6B9BB;
+  color: #b6b9bb;
 }
 
 /* MESSAGE PANEL */
@@ -302,7 +302,11 @@ body {
   box-shadow: 0px 0px 40px -15px rgba(0, 0, 0, 0.75);
 }
 
-.right .right-messages .message .message-options:hover > .message-options-panel {
+.right
+  .right-messages
+  .message
+  .message-options:hover
+  > .message-options-panel {
   display: block;
 }
 
@@ -315,7 +319,7 @@ body {
 }
 
 .right .right-messages .message .message-options-panel > div:hover {
-  color: #6B7376;
+  color: #6b7376;
 }
 
 /* MESSAGE TIME */
@@ -324,14 +328,14 @@ body {
   bottom: 5px;
   right: 5px;
   font-size: 10px;
-  color: #B6B9BB;
+  color: #b6b9bb;
 }
 
 /* RIGHT FOOTER */
 .right .right-footer {
   display: flex;
   align-items: center;
-  background-color: #F3EEEA;
+  background-color: #f3eeea;
   width: 100%;
   height: 70px;
 }
@@ -354,5 +358,5 @@ body {
   flex-shrink: 0;
   text-align: center;
   font-size: 25px;
-  color: #6B7376;
+  color: #6b7376;
 }

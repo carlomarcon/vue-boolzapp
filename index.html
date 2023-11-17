@@ -60,7 +60,12 @@
           />
         </div>
         <div class="contacts">
-          <div class="contact" v-for="(contact,index) in contacts">
+          <div
+            class="contact"
+            v-for="(contact,index) in contacts"
+            :key="index"
+            @click="changeChat(index)"
+          >
             <div class="contact-logo">
               <img
                 :src="`img/avatar${contact.avatar}.jpg`"
@@ -88,10 +93,16 @@
         <div class="header-right">
           <!-- QUI -->
 
-          <div class="header-right-logo" v-for="(contact,index) in contacts">
-            <img src="`img/avatar${contact[messageIndex].avatar}.jpg`" alt="" />
+          <div class="header-right-logo">
+            <img
+              :src="`img/avatar${contacts[messageIndex].avatar}.jpg`"
+              alt=""
+            />
             <h3>
-              <span id="header-right-contact-name"></span> <br />
+              <span id="header-right-contact-name"
+                >{{contacts[messageIndex].name}}</span
+              >
+              <br />
               <small class="time">Ultimo accesso oggi alle 16:26</small>
             </h3>
           </div>

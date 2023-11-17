@@ -174,5 +174,8 @@ const app = createApp({
     Send: function () {
       this.contacts[this.messageIndex].messages.push({ ...this.newChat });
     },
+    changeChat: function (chatNumber) {
+      this.messageIndex = chatNumber;
+    },
   },
 }).mount("#app");
