@@ -62,6 +62,7 @@
         <div class="contacts">
           <div
             class="contact"
+            :class="{'active' : index===messageIndex}"
             v-for="(contact,index) in contacts"
             :key="index"
             @click="changeChat(index)"
