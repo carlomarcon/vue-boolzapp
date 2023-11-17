@@ -4,6 +4,7 @@ const app = createApp({
   data() {
     return {
       messageIndex: 0,
+      searchText: "",
       newChat: { date: "10/01/2020 15:30:55", message: "", status: "sent" },
       contacts: [
         {
@@ -186,11 +187,27 @@ const app = createApp({
     },
     deleteMessage: function (chatN) {
       this.contacts[this.messageIndex].messages.splice(chatN, 1);
-      const lastMessage = document.querySelector(".message");
+      // const lastMessage = document.querySelector(".message");
+      // if (this.contacts[this.messageIndex].messages.length === 1) {
+      //   this.contacts[this.messageIndex].visible = false;
+      // }
     },
 
     changeChat: function (chatNumber) {
       this.messageIndex = chatNumber;
+    },
+
+    textSearch: function () {
+      const searchWord =
+        this.searchText[0].toUpperCase() +
+        this.searchText.slice(1).toLowerCase();
+      this.contacts.forEach((element, index) => {
+        if (element.name.includes(searchWord)) {
+          element.visible = true;
+        } else {
+          element.visible = false;
+        }
+      });
     },
   },
 }).mount("#app");
