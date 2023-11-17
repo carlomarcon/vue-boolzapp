@@ -360,3 +360,7 @@ body {
   font-size: 25px;
   color: #6b7376;
 }
+
+.none {
+  display: none;
+}

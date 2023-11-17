@@ -184,6 +184,11 @@ const app = createApp({
         });
       }, 1000);
     },
+    deleteMessage: function (chatN) {
+      this.contacts[this.messageIndex].messages.splice(chatN, 1);
+      const lastMessage = document.querySelector(".message");
+    },
+
     changeChat: function (chatNumber) {
       this.messageIndex = chatNumber;
     },
