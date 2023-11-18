@@ -203,15 +203,16 @@ const app = createApp({
     },
 
     textSearch: function () {
-      const searchWord =
-        this.searchText[0].toUpperCase() +
-        this.searchText.slice(1).toLowerCase();
+      const searchWord = this.searchText.trim();
+      const newWord =
+        searchWord[0].toUpperCase() + searchWord.slice(1).toLowerCase();
       this.contacts.forEach((element, index) => {
-        if (element.name.includes(searchWord)) {
+        if (element.name.includes(newWord)) {
           element.visible = true;
         } else {
           element.visible = false;
         }
+        console.log(newWord);
       });
     },
   },
