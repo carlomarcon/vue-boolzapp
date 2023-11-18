@@ -63,21 +63,20 @@
         </div>
         <div class="contacts">
           <div
-            class="contact"
-            :class="{'active' : index===messageIndex}"
+            :class="{'active' : index===messageIndex,'contact' : contact.messages.length>0, 'none' : contact.messages.length===0 }"
             v-for="(contact,index) in contacts"
             :key="index"
             @click="changeChat(index)"
             v-show="contacts[index].visible"
           >
-            <div class="contact-logo">
+            <div class="contact-logo" v-if="contact.messages.length>0">
               <img
                 :src="`img/avatar${contact.avatar}.jpg`"
                 alt="Avatar Michele"
               />
             </div>
 
-            <div class="contact-info">
+            <div class="contact-info" v-if="contact.messages.length>0">
               <h3>
                 <span class="contact-name">{{contact.name}}</span>
                 <span class="time" v-if="contact.messages.length>0"
@@ -129,7 +128,10 @@
                   <i class="fa fa-chevron-down"></i>
                   <div class="message-options-panel">
                     <div class="message-info">Info messaggio</div>
-                    <div class="message-destroy" @click="deleteMessage(index)">
+                    <div
+                      class="message-destroy"
+                      @click="deleteMessage(index),checkIndex()"
+                    >
                       Cancella messaggio
                     </div>
                   </div>

@@ -173,6 +173,13 @@ const app = createApp({
     };
   },
   methods: {
+    checkIndex: function () {
+      if (this.contacts[this.messageIndex].messages.length === 0) {
+        this.messageIndex++;
+      } else {
+      }
+    },
+
     Send: function () {
       this.contacts[this.messageIndex].messages.push({ ...this.newChat });
       this.newChat.message = "";
