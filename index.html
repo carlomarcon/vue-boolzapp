@@ -80,13 +80,14 @@
             <div class="contact-info">
               <h3>
                 <span class="contact-name">{{contact.name}}</span>
-                <span class="time"
+                <span class="time" v-if="contact.messages.length>0"
                   >{{contact.messages[contact.messages.length-1].date}}</span
                 >
               </h3>
-              <small
+              <small v-if="contact.messages.length>0"
                 >{{contact.messages[contact.messages.length-1].message}}</small
               >
+              <small v-else>CHAT VUOTA</small>
             </div>
           </div>
         </div>
