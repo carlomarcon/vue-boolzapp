@@ -1,5 +1,7 @@
 const { createApp } = Vue;
 
+const dt = luxon.DateTime;
+
 const app = createApp({
   data() {
     return {
@@ -173,6 +175,12 @@ const app = createApp({
     };
   },
   methods: {
+    dateToHours: function (date) {
+      const LuxonDate = dt.fromFormat(date, "dd/MM/yyyy HH:mm:ss");
+      console.log(LuxonDate);
+      console.log(LuxonDate.toFormat("HH:mm"));
+      return LuxonDate.toFormat("HH:mm");
+    },
     checkIndex: function () {
       if (this.contacts[this.messageIndex].messages.length === 0) {
         this.messageIndex++;
