@@ -1,4 +1,9 @@
 const { createApp } = Vue;
+let currentTime = new Date();
+let currentTimeAndDate = currentTime.toLocaleString().split(",");
+let currenttime = currentTimeAndDate[1].split(":");
+let currentTimimg = currenttime[0] + ":" + currenttime[1];
+console.log(currentTimimg);
 
 const dt = luxon.DateTime;
 
@@ -8,7 +13,11 @@ const app = createApp({
       check: true,
       messageIndex: 0,
       searchText: "",
-      newChat: { date: "10/01/2020 15:30:55", message: "", status: "sent" },
+      newChat: {
+        date: dt.now().toFormat("dd/MM/yyyy HH:mm:ss"),
+        message: "",
+        status: "sent",
+      },
       contacts: [
         {
           name: "Michele",
@@ -191,10 +200,11 @@ const app = createApp({
     Send: function () {
       this.contacts[this.messageIndex].messages.push({ ...this.newChat });
       this.newChat.message = "";
+      const IndexActual = this.messageIndex;
       setTimeout(() => {
-        this.contacts[this.messageIndex].messages.push({
+        this.contacts[IndexActual].messages.push({
           ...{
-            date: "10/01/2020 15:30:55",
+            date: dt.now().toFormat("dd/MM/yyyy HH:mm:ss"),
             message:
               "Il messaggio non è stato possibile inviarlo, siamo spiacenti. Riprovi più tardi",
             status: "received",
@@ -229,6 +239,11 @@ const app = createApp({
         }
         console.log(newWord);
       });
+    },
+    createTime: function () {
+      let currentTimeAndDate = currentDate.toLocaleString().split(",");
+      let currentTime = currentTimeAndDate[1].split(":");
+      let ActualTime = currentTime[0] + ":" + currentTime[1];
     },
   },
 }).mount("#app");
