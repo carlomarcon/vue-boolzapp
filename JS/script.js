@@ -197,10 +197,22 @@ const app = createApp({
       }
     },
 
+    changeOrder: function (index) {
+      let first = this.contacts[index];
+      for (let i = 0; i < this.contacts.length; i++) {
+        if (index == i) {
+          this.contacts.splice(index, 1);
+          this.contacts.unshift(first);
+
+          console.log(this.contacts);
+        }
+      }
+    },
+
     Send: function () {
       this.contacts[this.messageIndex].messages.push({ ...this.newChat });
       this.newChat.message = "";
-      const IndexActual = this.messageIndex;
+      let IndexActual = this.messageIndex;
       setTimeout(() => {
         this.contacts[IndexActual].messages.push({
           ...{
@@ -211,6 +223,7 @@ const app = createApp({
           },
         });
       }, 1000);
+      this.changeOrder(IndexActual);
     },
     deleteMessage: function (chatN) {
       this.contacts[this.messageIndex].messages.splice(chatN, 1);
